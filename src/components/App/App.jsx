@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Page from '../Page/Page';
+import Submit from '../Submit/Submit';
 import { Container } from '@mui/material';
 import { HashRouter as HR, Route } from 'react-router-dom/cjs/react-router-dom.min';
 import './App.css';
@@ -23,6 +24,7 @@ function App() {
               inputType={'number'}
               inputLabel={'Feeling?'}
               path={'/understanding'}
+              actionType={'FEELING'}
             />
           </Route>
           <Route path='/understanding'>
@@ -31,6 +33,7 @@ function App() {
               inputType={'number'}
               inputLabel={'Understanding?'}
               path={'/support'}
+              actionType={'UNDERSTANDING'}
             />
           </Route>
           <Route path='/support'>
@@ -39,6 +42,7 @@ function App() {
               inputType={'number'}
               inputLabel={'Support?'}
               path={'/comments'}
+              actionType={'SUPPORT'}
             />
           </Route>
           <Route path='/comments'>
@@ -47,6 +51,21 @@ function App() {
               inputType={'text'}
               inputLabel={'Comments?'}
               path={'/submit'}
+              actionType={'COMMENTS'}
+              btnText={'Review'}
+            />
+          </Route>
+          <Route path='/submit'>
+            <Submit />
+          </Route>
+          <Route path='/success'>
+            <Page
+              question={'Success!'}
+              inputType={'hidden'}
+              inputLabel={'Comments?'}
+              path={'/'}
+              actionType={'RESET'}
+              btnText={'Leave more feedback'}
             />
           </Route>
         </HR>
