@@ -60,7 +60,7 @@ function App() {
           </Route>
           <Route path='/success'>
             <Page
-              question={'Success!'}
+              question={'Success! Thank you for your feedback!'}
               inputType={'hidden'}
               inputLabel={'Comments?'}
               path={'/'}

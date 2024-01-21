@@ -6,6 +6,7 @@ const pool = require('../modules/pool')
 // TODO: This route adds a new feedback entry
 router.post('/', (req, res) => {
     const {feeling, understanding, support, comments} = req.body
+    
     const queryText = `
     INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
 VALUES ($1, $2, $3, $4);

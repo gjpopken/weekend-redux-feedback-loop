@@ -7,9 +7,15 @@ const Submit = () => {
     const formInputs = useSelector(store => store)
     const history = useHistory()
     const { feeling, understanding, support, comments } = formInputs
-
     const handleSubmit = () => {
         console.log('posting to axios');
+        axios.post('/api/feedback', formInputs)
+        .then(response => {
+            console.log('successfully POSTed');
+        }).catch(error => {
+            console.log(error);
+            alert('There was an error posting.')
+        })
         history.push('/success')
     }
 
